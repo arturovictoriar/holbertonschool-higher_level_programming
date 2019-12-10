@@ -13,22 +13,33 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *copyhead = *head, *oldnode = NULL, *new;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
 		return (NULL);
-
-	for (; copyhead != NULL; copyhead = copyhead->next)
-	{
-		if (number < copyhead->n)
-			break;
-		oldnode = copyhead;
-	}
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
 	new->n = number;
-	new->next = copyhead;
 
+	if (*head == NULL)
+	{
+		*head = new;
+		new->next = NULL;
+		return (new);
+	}
+
+	else
+	{
+		for (; copyhead != NULL; copyhead = copyhead->next)
+		{
+			if (number < copyhead->n)
+				break;
+			oldnode = copyhead;
+		}
+	}
+
+	new->next = copyhead;
 	oldnode->next = new;
+
 	return (new);
 }
