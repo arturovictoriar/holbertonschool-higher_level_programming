@@ -27,7 +27,14 @@ listint_t *insert_node(listint_t **head, int number)
 
 	for (; copyhead != NULL; copyhead = copyhead->next)
 	{
-		if (number <= copyhead->n)
+		if (number < copyhead->n && copyhead->next == NULL)
+		{
+			*head = new;
+			new->next = copyhead;
+			return (new);
+		}
+
+		if (number < copyhead->n)
 			break;
 		oldnode = copyhead;
 	}
