@@ -25,14 +25,11 @@ listint_t *insert_node(listint_t **head, int number)
 		return (new);
 	}
 
-	else
+	for (; copyhead != NULL; copyhead = copyhead->next)
 	{
-		for (; copyhead != NULL; copyhead = copyhead->next)
-		{
-			if (number < copyhead->n)
-				break;
-			oldnode = copyhead;
-		}
+		if (number <= copyhead->n)
+			break;
+		oldnode = copyhead;
 	}
 
 	new->next = copyhead;
