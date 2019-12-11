@@ -44,6 +44,8 @@ Print the numbers from 1 to 100, but for multiples of three print `Fizz` instead
 
 - [13-insert_number.c:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/13-insert_number.c "13-insert_number.c")
 Insert a number into a sorted singly linked list.
+[lists.h:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/lists.h "lists.h")
+Is the header file to make working "13-insert_number.c" file.
 
 - [100-print_tebahpla.py:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/100-print_tebahpla.py "100-print_tebahpla.py")
 Print the ASCII alphabet, in reverse order, alternating lowercase and uppercase (`z` in lowercase and `Y` in uppercase).
