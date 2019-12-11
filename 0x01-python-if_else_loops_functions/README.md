@@ -1,5 +1,4 @@
-s
-n - if/else, loops, functions
+# # Python - if/else, loops, functions
 This document stores a simple description of each file in the [0x01-python-if_else_loops_functions](https://github.com/arvicrin/holbertonschool-higher_level_programming/tree/master/0x01-python-if_else_loops_functions) directory.
 
 ## Files
