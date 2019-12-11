@@ -54,7 +54,7 @@ Create a copy of the string, removing the character at the position `n` (not the
 - [102-magic_calculation.py](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x01-python-if_else_loops_functions/102-magic_calculation.py "102-magic_calculation.py")
 Python code written using only knowing the assembly code.
 
-## Reference 
-[Python page]([https://www.python.org/](https://www.python.org/))
+## Reference
+[Python page](https://www.python.org/)
 ## Autors
 Arturo Victoria Rincón
