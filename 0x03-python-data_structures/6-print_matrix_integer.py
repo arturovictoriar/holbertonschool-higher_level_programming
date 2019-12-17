@@ -2,7 +2,7 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-    if (len(matrix) != 1 and len(matrix) != 0) or matrix is not None:
+    if (len(matrix) != 1 and len(matrix) != 0) and matrix is not None:
         for j in range(len(matrix)):
             for i in range(len(matrix[j])):
                 if i != len(matrix[j]) - 1:
