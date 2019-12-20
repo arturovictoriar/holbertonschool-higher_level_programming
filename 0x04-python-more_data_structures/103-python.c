@@ -12,6 +12,7 @@ void print_python_list(PyObject *p)
 	Py_ssize_t allo = (((PyListObject *)(p))->allocated);
 	PyObject *ele;
 
+	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %zd\n", size);
 	printf("[*] Allocated = %zd\n", allo);
 
@@ -29,16 +30,6 @@ void print_python_list(PyObject *p)
   */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t i, size = (((PyVarObject *)(p))->ob_size);
-	Py_ssize_t allo = (((PyListObject *)(p))->allocated);
-	PyObject *ele;
-
-	printf("[*] Size of the Python List = %zd\n", size);
-	printf("[*] Allocated = %zd\n", allo);
-
-	for (i = 0; i < size; i++)
-	{
-		ele = PyList_GetItem(p, i);
-	printf("Element %zd: %s\n", i, (char *)(ele->ob_type)->tp_name);
-	}
+	(void) p;
+	printf("[.] bytes object info\n");
 }
