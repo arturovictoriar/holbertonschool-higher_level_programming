@@ -8,9 +8,7 @@ def safe_function(fct, *args):
     try:
         result = fct(args[0], args[1])
         p = 1
-    except (ZeroDivisionError) as z:
+    except BaseException as z:
         print("Exception: {}".format(z), file=sys.stderr)
-    except (IndexError) as i:
-        print("Exception: {}".format(i), file=sys.stderr)
     if p:
         return result
