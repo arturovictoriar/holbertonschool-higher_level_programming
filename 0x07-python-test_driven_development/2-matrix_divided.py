@@ -21,7 +21,6 @@ def matrix_divided(matrix, div):
         for b in c:
             if type(b) != int and type(b) != float:
                 raise TypeError(m1)
-       
 
     if any((len(matrix[0]) != len(d)) for d in matrix):
         raise TypeError(m2)
