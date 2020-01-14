@@ -14,7 +14,8 @@ def matrix_divided(matrix, div):
     m2 = "Each row of the matrix must have the same size"
     m3 = "div must be a number"
     m4 = "division by zero"
-    if type(matrix) != list or any(type(a) != list for a in matrix):
+    if type(matrix) != list or any(type(a) != list for a in matrix) \
+       or len(matrix) == 0 or any(len(a) == 0 for a in matrix):
         raise TypeError(m1)
 
     for c in matrix:
