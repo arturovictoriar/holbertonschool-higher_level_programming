@@ -15,7 +15,7 @@ def text_indentation(text):
     if type(text) != str:
         raise TypeError("text must be a string")
 
-    f = 0
+    f = 1
     for num, i in enumerate(text):
         if f == 1:
             if i == ' ' or i == '\t' or i == '\n':
