@@ -24,6 +24,10 @@ Second declare the matrix
 
 >>> matrix5 = [[]]
 
+>>> matrix6 = []
+
+>>> matrix7 = [[1, 2], []]
+
 Now use it with:
 
 >>> matrix_divided(matrix, 3)
@@ -86,7 +90,16 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 
 >>> matrix_divided(matrix5, 4)
-[[]]
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(matrix6, 4)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(matrix7, 4)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided(matrix, 10e1000)
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
@@ -101,3 +114,7 @@ ZeroDivisionError: division by zero
 >>> matrix_divided(matrix, -10e-1000)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
+
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
