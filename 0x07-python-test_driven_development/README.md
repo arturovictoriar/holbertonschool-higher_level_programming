@@ -17,6 +17,9 @@ Function that prints a square with the character #.
 [5-text_indentation.py:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x07-python-test_driven_development/5-text_indentation.py "5-text_indentation.py")
 Function that prints a text with 2 new lines after each of these characters: ., ? and :.
 
+[6-max_integer.py:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x07-python-test_driven_development/6-max_integer.py "6-max_integer.py")
+Function to find and return the maximum integer in a list of integers.
+
 [100-matrix_mul.py:](https://github.com/arvicrin/holbertonschool-higher_level_programming/blob/master/0x07-python-test_driven_development/100-matrix_mul.py "100-matrix_mul.py")
 Function that multiplies 2 matrices.
 
