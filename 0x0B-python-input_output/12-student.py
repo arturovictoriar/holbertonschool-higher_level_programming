@@ -17,7 +17,7 @@ class Student:
         """Function that writes an Object to \
         a text file, using a JSON representation."""
         attrib = {}
-        if attrs is not None:
+        if attrs is not None and all(isinstance(keyy, str) for keyy in attrs):
             for i in attrs:
                 if i in self.__dict__:
                     attrib[i] = self.__dict__[i]
