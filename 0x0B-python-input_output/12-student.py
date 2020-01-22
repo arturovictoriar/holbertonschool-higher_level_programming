@@ -18,10 +18,8 @@ class Student:
         a text file, using a JSON representation."""
         attrib = {}
         if attrs is not None and all(isinstance(keyy, str) for keyy in attrs):
-            for i in attrs:
-                if i in self.__dict__:
-                    attrib[i] = self.__dict__[i]
-            if len(attrib) == 0:
-                return obj.__dict__
+            for i, j in self.__dict__.items():
+                if i in attrs:
+                    attrib[i] = j
             return attrib
         return self.__dict__
