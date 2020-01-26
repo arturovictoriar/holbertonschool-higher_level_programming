@@ -29,7 +29,9 @@ class Rectangle(Base):
         """ Return the rectangle with the character #"""
         s = ""
         if self.__height != 0 and self.__width != 0:
+            s += '\n' * self.__y
             for i in range(self.__height):
+                s += ' ' * self.__x
                 s += ("#" * self.__width)
                 if i != self.__height - 1:
                     s += '\n'
