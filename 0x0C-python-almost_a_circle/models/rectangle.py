@@ -14,7 +14,16 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        Base.__init__(self, id)
+        super().__init__(id)
+
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        idd = self.id
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(idd, x, y, w, h)
 
     def display(self):
         """ Return the rectangle with the character #"""
