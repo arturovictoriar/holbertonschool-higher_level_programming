@@ -16,6 +16,20 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def update(self, *args):
+        """Assigns an argument to each attribute of the class"""
+        for num, arg in enumerate(args):
+            if num == 0:
+                self.id = arg
+            elif num == 1:
+                self.width = arg
+            elif num == 2:
+                self.height = arg
+            elif num == 3:
+                self.x = arg
+            elif num == 4:
+                self.y = arg
+
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         idd = self.id
