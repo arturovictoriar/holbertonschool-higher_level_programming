@@ -16,6 +16,16 @@ class Rectangle(Base):
         self.y = y
         Base.__init__(self, id)
 
+    def display(self):
+        """ Return the rectangle with the character #"""
+        s = ""
+        if self.__height != 0 and self.__width != 0:
+            for i in range(self.__height):
+                s += ("#" * self.__width)
+                if i != self.__height - 1:
+                    s += '\n'
+        print(s)
+
     def area(self):
         """Return the rectangle's Area"""
         return self.__width * self.__height
