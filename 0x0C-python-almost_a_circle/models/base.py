@@ -19,6 +19,12 @@ class Base:
             self.id = self.__nb_objects
 
     @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(1, 1, 1, 1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file"""
         l = []
