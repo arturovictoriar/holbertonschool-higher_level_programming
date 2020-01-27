@@ -3,6 +3,7 @@
     rectangle.py module
 """
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -15,6 +16,15 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        idd = self.id
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
+        return {'x': x, 'y': y, 'id': idd, 'height': h, 'width': w}
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute of the class"""
