@@ -19,7 +19,28 @@ class Base:
             self.id = self.__nb_objects
 
     @classmethod
+    def load_from_file(cls):
+        """Return a list of instances"""
+        try:
+            f = open(str(cls.__name__) + ".json")
+            f.close()
+        except:
+            return []
+
+        l = []
+        with open(str(cls.__name__) + ".json", "r") as f:
+            l = cls.from_json_string(f.read())
+
+        num_ins = len(l)
+        inst = []
+        for y in range(num_ins):
+            inst.append(cls.create(**l[y]))
+
+        return inst
+
+    @classmethod
     def create(cls, **dictionary):
+        """Return an instance with all attributes already set"""
         dummy = cls(1, 1, 1, 1)
         dummy.update(**dictionary)
         return dummy
