@@ -52,6 +52,13 @@ class Base:
                 f.write(cls.to_json_string(l))
 
     @staticmethod
+    def from_json_string(json_string):
+        """Return the list of the JSON string representation json_string"""
+        if json_string is None or len(json_string) == 0:
+            return json.loads("[]")
+        return json.loads(json_string)
+
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
