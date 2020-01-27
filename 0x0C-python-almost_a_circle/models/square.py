@@ -20,6 +20,14 @@ class Square(Rectangle):
         w = super().width
         return "[Square] ({}) {}/{} - {}".format(idd, x, y, w)
 
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Square"""
+        idd = self.id
+        x = super().x
+        y = super().y
+        w = super().width
+        return {'x': x, 'y': y, 'id': idd, 'size': w}
+
     @property
     def size(self):
         """size getter"""
