@@ -21,9 +21,31 @@ class TestSquareclass(unittest.TestCase):
         del self.inst
         Base._Base__nb_objects = 0
 
+    def test_to_dict(self):
+        """ Tear Dowm"""
+        r1 = self.inst.to_dictionary()
+        exp = {'x': 3, 'y': 4, 'id': 5, 'size': 2}
+        self.assertEqual(r1, exp)
+
+    def test_to_dict_1(self):
+        """ Tear Dowm"""
+        r1 = self.inst.to_dictionary()
+        exp = {'x': 3, 'y': 4, 'id': 5, 'size': 2}
+        self.assertEqual(type(r1).__name__, type(exp).__name__)
+
     def test_area(self):
         """ Test Area"""
         self.assertEqual(self.inst.area(), 4)
+
+    def test_get_set_size(self):
+        """ Test Area"""
+        self.inst.size = 30
+        self.assertEqual(str(self.inst), "[Square] (5) 3/4 - 30")
+
+    def test_get_set_size_e(self):
+        """ Test Area"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            self.inst.size = "Fault"
 
     def out_c(self, x=None):
         """ Out std"""

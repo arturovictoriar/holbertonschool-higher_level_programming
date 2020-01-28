@@ -20,6 +20,18 @@ class TestRectangleclass(unittest.TestCase):
         del self.inst
         Base._Base__nb_objects = 0
 
+    def test_to_dict(self):
+        """ Tear Dowm"""
+        r1 = self.inst.to_dictionary()
+        exp = {'x': 3, 'y': 4, 'id': 5, 'height': 2, 'width': 1}
+        self.assertEqual(r1, exp)
+
+    def test_to_dict_1(self):
+        """ Tear Dowm"""
+        r1 = self.inst.to_dictionary()
+        exp = {'x': 3, 'y': 4, 'id': 5, 'height': 2, 'width': 1}
+        self.assertEqual(type(r1).__name__, type(exp).__name__)
+
     def test_area(self):
         """ Test Area"""
         self.assertEqual(self.inst.area(), 2)
