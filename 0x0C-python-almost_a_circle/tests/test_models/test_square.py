@@ -5,15 +5,16 @@
 import unittest
 import sys
 from io import StringIO
+from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
 
 
-class TestRectangleclass(unittest.TestCase):
+class TestSquareclass(unittest.TestCase):
     """Test Cases Class"""
     def setUp(self):
         """Set up"""
-        self.inst = Rectangle(1, 2, 3, 4, 5)
+        self.inst = Square(2, 3, 4, 5)
 
     def tearDown(self):
         """ Tear Dowm"""
@@ -22,7 +23,7 @@ class TestRectangleclass(unittest.TestCase):
 
     def test_area(self):
         """ Test Area"""
-        self.assertEqual(self.inst.area(), 2)
+        self.assertEqual(self.inst.area(), 4)
 
     def out_c(self, x=None):
         """ Out std"""
@@ -39,7 +40,7 @@ class TestRectangleclass(unittest.TestCase):
 
     def test_display(self):
         """ Test display"""
-        display = "\n\n\n\n   #\n   #\n"
+        display = "\n\n\n\n   ##\n   ##\n"
         o = self.out_c()
         self.assertEqual(o, display)
 
@@ -52,16 +53,16 @@ class TestRectangleclass(unittest.TestCase):
 
     def test_str(self):
         """ Test display"""
-        self.assertEqual(str(self.inst), "[Rectangle] (5) 3/4 - 1/2")
+        self.assertEqual(str(self.inst), "[Square] (5) 3/4 - 2")
 
     def test_update_att(self):
         """ Test display"""
         self.inst.update(89)
-        self.assertEqual(str(self.inst), "[Rectangle] (89) 3/4 - 1/2")
+        self.assertEqual(str(self.inst), "[Square] (89) 3/4 - 2")
 
     def test_update_dic(self):
-        self.inst.update(x=6, height=8, y=3, width=7)
-        self.assertEqual(str(self.inst), "[Rectangle] (5) 6/3 - 7/8")
+        self.inst.update(x=6, y=3, size=7)
+        self.assertEqual(str(self.inst), "[Square] (5) 6/3 - 7")
 
     def test_id(self):
         """ Test id"""
@@ -77,7 +78,7 @@ class TestRectangleclass(unittest.TestCase):
 
     def test_width(self):
         """ test width"""
-        self.assertEqual(self.inst.width, 1)
+        self.assertEqual(self.inst.width, 2)
 
     def test_height(self):
         """ test height"""
