@@ -3,6 +3,7 @@
     base.py module
 """
 import json
+import csv
 
 
 class Base:
@@ -17,6 +18,49 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = self.__nb_objects
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes the JSON string representation of list_objs to a file"""
+        if list_objs is None or list_objs == []:
+            l = []
+        with open(cls.__name__ + ".csv", "w") as fc:
+            list_objs = [i.to_dictionary() for i in list_objs]
+            rec = ['id', 'width', 'height', 'x', 'y']
+            squ = ['id', 'size', 'x', 'y']
+            if cls.__name__ == "Rectangle":
+                f_csv = csv.DictWriter(fc, fieldnames=rec)
+            else:
+                f_csv = csv.DictWriter(fc, fieldnames=squ)
+            f_csv.writeheader()
+            f_csv.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of instances"""
+        try:
+            f = open(str(cls.__name__) + ".csv")
+            f.close()
+        except:
+            return []
+        squ = ['id', 'size', 'x', 'y']
+        rec = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == "Rectangle":
+            fieldn = rec
+        else:
+            fieldn = squ
+
+        inst = []
+        with open(str(cls.__name__) + ".csv", "r") as fc:
+            cr = csv.reader(fc, delimiter=',')
+            for i, dictt in enumerate(cr):
+                if i > 0:
+                    ins = cls(1, 1)
+                    for x, y in enumerate(dictt):
+                        if y:
+                            setattr(ins, fieldn[x], int(y))
+                    inst.append(ins)
+        return inst
 
     @classmethod
     def load_from_file(cls):
