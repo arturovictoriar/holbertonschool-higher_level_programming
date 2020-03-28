@@ -16,7 +16,7 @@ def main():
     c = db.cursor()
     command = """SELECT *
                  FROM states
-                 WHERE states.name = '{}'
+                 WHERE BINARY states.name = '{}'
                  ORDER BY states.id ASC"""
     command = command.format(argv[4])
     numrows = c.execute(command)
