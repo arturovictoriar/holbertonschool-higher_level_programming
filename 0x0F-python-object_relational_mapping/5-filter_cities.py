@@ -18,7 +18,7 @@ def main():
                  FROM cities, states
                  WHERE BINARY states.name = %s
                  AND cities.state_id = states.id
-                 ORDER BY states.id ASC"""
+                 ORDER BY cities.id ASC"""
     numrows = c.execute(command, (argv[4],))
     states = c.fetchall()
     for i, idstate in enumerate(states):
