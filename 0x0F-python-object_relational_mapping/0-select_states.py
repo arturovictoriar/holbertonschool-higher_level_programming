@@ -16,8 +16,8 @@ def main():
     c = db.cursor()
     numrows = c.execute("""SELECT * FROM states ORDER BY states.id ASC""")
     states = c.fetchall()
-    for ids, state in states:
-        print(ids, state)
+    for idstate in states:
+        print(idstate)
 
 if __name__ == "__main__":
     main()
