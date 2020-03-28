@@ -22,11 +22,7 @@ def main():
                  ORDER BY cities.id ASC"""
     numrows = c.execute(command, (argv[4],))
     states = c.fetchall()
-    for i, idstate in enumerate(states):
-        if (i != numrows - 1):
-            print("{}, ".format(idstate[0]), end='')
-        else:
-            print("{}".format(idstate[0]))
+    print(", ".join(citistate[0] for citistate in states))
 
 if __name__ == "__main__":
     main()
