@@ -16,14 +16,12 @@ def main():
     c = db.cursor()
     command = """SELECT *
                  FROM states
-                 WHERE states.name LIKE 'N%'
+                 WHERE states.name LIKE BINARY 'N%'
                  ORDER BY states.id ASC"""
     numrows = c.execute(command)
     states = c.fetchall()
     for idstate in states:
         print(idstate)
-    c.close()
-    db.close()
 
 if __name__ == "__main__":
     main()
