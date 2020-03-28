@@ -22,6 +22,8 @@ def main():
     states = c.fetchall()
     for idstate in states:
         print(idstate)
+    c.close()
+    db.close()
 
 if __name__ == "__main__":
     main()
