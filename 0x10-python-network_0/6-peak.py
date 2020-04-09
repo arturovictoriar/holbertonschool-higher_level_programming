@@ -10,19 +10,16 @@ def find_peak(list_of_integers):
         return None
     elif len(list_of_integers) == 1:
         return list_of_integers[0]
-    else:
-        peak = list_of_integers[0]
 
-    for i, num in enumerate(list_of_integers):
-        if num >= list_of_integers[len(list_of_integers) - 1 - i]:
-            max_num = num
-        else:
-            max_num = list_of_integers[len(list_of_integers) - 1 - i]
-
-        if max_num > peak:
-            peak = max_num
-
-        if (len(list_of_integers) // 2) - i <= 0:
-            break
-
-    return peak
+    h = len(list_of_integers) - 1
+    l = 0
+    lis = list_of_integers
+    while h > l:
+        half = (h + l) // 2
+        if lis[half] <= lis[half + 1]:
+            l = half + 1
+        elif lis[half] <= lis[half - 1]:
+            h = half - 1
+        elif lis[half] >= lis[half + 1] and lis[half] >= lis[half - 1]:
+            return lis[half]
+    return lis[l]
