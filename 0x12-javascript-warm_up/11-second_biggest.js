@@ -4,10 +4,9 @@
 */
 const args = process.argv;
 const len = process.argv.length;
-if (len > 3) {
-  args.sort();
-  const secondBiggest = args[len - 2];
-  console.log(secondBiggest);
-} else {
+if (len <= 3) {
   console.log(0);
+} else {
+  args.sort();
+  console.log(args[len - 2]);
 }
