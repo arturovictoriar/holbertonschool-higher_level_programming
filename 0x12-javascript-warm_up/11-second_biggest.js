@@ -4,8 +4,8 @@
 */
 const args = process.argv;
 if (args.length > 3) {
-  const orderArrayNum = args.filter((num, index) => index > 1).sort();
-  console.log(orderArrayNum[orderArrayNum.length - 2]);
+  args.sort();
+  console.log(args[args.length - 2]);
 } else {
   console.log(0);
 }
