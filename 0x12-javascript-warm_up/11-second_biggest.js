@@ -3,9 +3,11 @@
   searche and print the second biggest integer in the list of arguments.
 */
 const args = process.argv;
-if (args.length > 3) {
+const len = process.argv.length;
+if (len > 3) {
   args.sort();
-  console.log(args[args.length - 2]);
+  const secondBiggest = args[len - 2];
+  console.log(secondBiggest);
 } else {
   console.log(0);
 }
