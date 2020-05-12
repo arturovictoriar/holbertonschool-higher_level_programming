@@ -14,7 +14,7 @@ request(url, function (error, response, body) {
     let count = 0;
     for (const film of jsonBody.results) {
       for (const character of film.characters) {
-        if (character === 'https://swapi-api.hbtn.io/api/people/18/') { // ...people/18 is Wedge Antilles
+        if (character.endsWith('/18/')) { // ...people/18 is Wedge Antilles
           count += 1;
         }
       }
