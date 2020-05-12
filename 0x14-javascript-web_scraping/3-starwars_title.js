@@ -9,8 +9,12 @@ const url = 'https://swapi-api.hbtn.io/api/films/' + movieID;
 
 request(url, function (error, response, body) {
   if (error) {
-    console.log('code:', response.statusCode);
+    console.log(error);
   } else {
-    console.log(JSON.parse(body).title);
+    if (JSON.parse(body).detail === 'Not found') {
+      console.log(JSON.parse(body).detail);
+    } else {
+      console.log(JSON.parse(body).title);
+    }
   }
 });
