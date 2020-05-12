@@ -14,8 +14,8 @@ function kindPromise (characters, numChar) {
     if (errorC) {
       console.log('code:', responseC.statusCode);
     }
-    kindPromise(characters, numChar + 1);
     console.log(JSON.parse(bodyC).name);
+    kindPromise(characters, numChar + 1);
   });
 }
 
