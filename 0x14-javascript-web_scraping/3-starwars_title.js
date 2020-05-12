@@ -11,9 +11,7 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    if (JSON.parse(body).detail === 'Not found') {
-      console.log(JSON.parse(body).detail);
-    } else {
+    if (response.statusCode === 200) {
       console.log(JSON.parse(body).title);
     }
   }
