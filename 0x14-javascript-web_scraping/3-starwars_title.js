@@ -4,7 +4,7 @@
      where the episode number matches a given integer
 */
 const request = require('request');
-const movieID = process.argv[2];
+const movieID = parseInt(process.argv[2]);
 const url = 'https://swapi-api.hbtn.io/api/films/' + movieID;
 
 request(url, function (error, response, body) {
