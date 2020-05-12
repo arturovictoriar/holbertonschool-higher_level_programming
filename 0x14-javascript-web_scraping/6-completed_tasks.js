@@ -7,20 +7,16 @@ const url = process.argv[2];
 
 request(url, function (error, response, body) {
   if (error) {
-    console.log('code:', response.statusCode);
+    console.log(error);
   } else {
     const jsonBody = JSON.parse(body);
     const dictCompletTodoUser = {};
     for (const todo of jsonBody) {
-      if (dictCompletTodoUser[todo.userId]) {
-        if (todo.completed) {
+      if (todo.completed) {
+        if (dictCompletTodoUser[todo.userId]) {
           dictCompletTodoUser[todo.userId] += 1;
-        }
-      } else {
-        if (todo.completed) {
-          dictCompletTodoUser[todo.userId] = 1;
         } else {
-          dictCompletTodoUser[todo.userId] = 0;
+          dictCompletTodoUser[todo.userId] = 1;
         }
       }
     }
